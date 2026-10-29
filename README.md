@@ -10,7 +10,7 @@ Use https://jneildsouza.github.io/foc-reader/. The root `index.html` is a self-c
 
 1. Add a document (PDF, DOCX, TXT, Markdown) or paste your draft.
 2. Review the extracted text and choose **Enter the studio**.
-3. A device voice is selected for immediate playback. Choose Natural AI voice in the studio for Kokoro male narrators.
+3. Michael, a natural Kokoro male voice, is selected by default. Compare Michael, George, and Fenrir with Listen to voice; additional narrators are in the dropdown. The first preview downloads the model. Device voice remains available without a model download.
 4. Press play. Adjust the speed and your comfort limit, turn on passage spotlight, or pause between paragraphs to reflect.
 
 Click a word to seek. Space plays/pauses; arrow keys move between sentences when focus is outside a control. Bookmarks, text downloads, font sizes, a dark theme, and local library persistence are included. Install from the browser menu; on iPhone use Safari → Share → Add to Home Screen.
