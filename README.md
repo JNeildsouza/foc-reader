@@ -2,11 +2,15 @@
 
 A calm, installable reading studio for your own drafts and documents. Built for GitHub Pages, with no server or account required.
 
+## Open the app
+
+Use https://jneildsouza.github.io/foc-reader/. The root `index.html` is a self-contained launcher that opens this URL even when double-clicked. The actual Vite entry lives in `app/index.html`; development uses `pnpm dev`. Do not open source or compiled module files with `file://`.
+
 ## Use
 
 1. Add a document (PDF, DOCX, TXT, Markdown) or paste your draft.
 2. Review the extracted text and choose **Enter the studio**.
-3. Select a male Kokoro narrator, or a system voice for an immediate start.
+3. A device voice is selected for immediate playback. Choose Natural AI voice in the studio for Kokoro male narrators.
 4. Press play. Adjust the speed and your comfort limit, turn on passage spotlight, or pause between paragraphs to reflect.
 
 Click a word to seek. Space plays/pauses; arrow keys move between sentences when focus is outside a control. Bookmarks, text downloads, font sizes, a dark theme, and local library persistence are included. Install from the browser menu; on iPhone use Safari → Share → Add to Home Screen.
