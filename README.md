@@ -10,18 +10,18 @@ Use https://jneildsouza.github.io/foc-reader/. The root `index.html` is a self-c
 
 1. Add a document (PDF, DOCX, TXT, Markdown) or paste your draft.
 2. Review the extracted text and choose **Enter the studio**.
-3. Michael, a natural Kokoro male voice, is selected by default. Compare Michael, George, and Fenrir with Listen to voice; additional narrators are in the dropdown. The first preview downloads the model. Device voice remains available without a model download.
+3. Michael, a natural Kokoro male voice, is selected by default. Compare Michael, George, and Fenrir with Listen to voice; additional narrators are in the dropdown. Preview samples play immediately. Selecting a voice previews it when paused and resumes the document with the new voice when reading. Clicking any displayed word starts reading at that word, including from pause. Device voice remains available without a model download.
 4. Press play. Adjust the speed and your comfort limit, turn on passage spotlight, or pause between paragraphs to reflect.
 
 Click a word to seek. Space plays/pauses; arrow keys move between sentences when focus is outside a control. Bookmarks, text downloads, font sizes, a dark theme, and local library persistence are included. Install from the browser menu; on iPhone use Safari → Share → Add to Home Screen.
 
 ## Voice and privacy
 
-Kokoro-82M runs in a Web Worker using Transformers.js / ONNX Runtime (WASM, q8). The first playback downloads roughly 90 MB of model weights plus runtime files from Hugging Face/CDN. Documents are processed in the browser and are not sent to a speech API. Models are cached by Transformers.js; cache availability depends on browser storage. System voices may use an online provider depending on the device.
+Kokoro-82M runs in a Web Worker using Transformers.js / ONNX Runtime. It tries WebGPU with fp32 weights (about 330 MB) and falls back to WASM q8 (about 90 MB). Voice previews are bundled MP3 samples made with the local Kokoro model and play without loading the inference model. Document playback buffers two passages initially and prepares three ahead. Slow CPU devices may still need to buffer during long readings. Obsolete queued work is discarded when changing position or voice. Documents are processed in the browser and are not sent to a speech API. Models are cached by Transformers.js; cache availability depends on browser storage. System voices may use an online provider depending on the device.
 
 Available male narrators: George, Michael, Fenrir, Fable, Onyx, Puck and Lewis. These are Kokoro preset voices, not celebrity voice clones. Kokoro preserves its natural pitch and prosody. System voices expose a pitch control; both engines support speed changes.
 
-**Timing is transparent:** Kokoro.js provides sentence audio without word alignment, so word highlighting is estimated inside each sentence. System voices use native word boundaries where available and estimated timings otherwise. Neither speech synthesis nor PDF extraction guarantees perfect pronunciation or layout reconstruction. Review complex layouts, equations, numbers, and tables. Image-only PDFs require OCR before import.
+**Timing is transparent:** Kokoro.js provides sentence audio without word alignment, so word highlighting is estimated inside each passage. System voices use native word boundaries where available and estimated timings otherwise. Neither speech synthesis nor PDF extraction guarantees perfect pronunciation or layout reconstruction. Review complex layouts, equations, numbers, and tables. Image-only PDFs require OCR before import.
 
 Documents and reading positions are stored in IndexedDB on the current browser. No cloud sync. Clearing site data removes the library; download a text copy to preserve it. The published repository contains only application code and the included fictional welcome guide. The service worker caches same-origin app files; a first online visit is required, and offline voice playback requires all model/runtime assets to have been cached.
 

@@ -3,7 +3,7 @@ export function chunksOf(text, tokens = tokensOf(text)) {
   const chunks=[]; let start=0;
   for(let i=0;i<tokens.length;i++) {
     const gap=text.slice(tokens[i].end, tokens[i+1]?.start ?? text.length);
-    if (/[.!?][”'"’)\]]*$/u.test(tokens[i].text) || /\n\s*\n/.test(gap) || i-start>=44 || i===tokens.length-1) {
+    if ((i-start>=19 && /[.!?][”'"’)\]]*$/u.test(tokens[i].text)) || /\n\s*\n/.test(gap) || i-start>=44 || i===tokens.length-1) {
       chunks.push({start, end:i+1, text:text.slice(tokens[start].start,tokens[i].end)}); start=i+1;
     }
   }
