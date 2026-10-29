@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@huggingface/transformers':
-        specifier: 3.5.2
-        version: 3.5.2
+        specifier: 3.8.1
+        version: 3.8.1
       kokoro-js:
         specifier: 1.2.1
         version: 1.2.1
@@ -186,16 +186,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@huggingface/jinja@0.4.1':
-    resolution: {integrity: sha512-3WXbMFaPkk03LRCM0z0sylmn8ddDm4ubjU7X+Hg4M2GOuMklwoGAFXp9V2keq7vltoB/c7McE5aHUVVddAewsw==}
-    engines: {node: '>=18'}
-
   '@huggingface/jinja@0.5.11':
     resolution: {integrity: sha512-YzEzwM5oQf4r0vs7ifWQ+yuVR1YkAHrjERQ+a8WRsStHHp4NRBg+NesjiFc+X2AFUpRvvrIeHDS1xFy9jY/IjQ==}
     engines: {node: '>=18'}
-
-  '@huggingface/transformers@3.5.2':
-    resolution: {integrity: sha512-mfRXkmcL99+ibpjM++pvZmc2h3po8i1ZgSRI5Rtgh++P15GU0lY8UQteYt/w5V+GQw+Jpao93MoipcePzh3mKg==}
 
   '@huggingface/transformers@3.8.1':
     resolution: {integrity: sha512-tsTk4zVjImqdqjS8/AOZg2yNLd1z9S5v+7oUPpXaasDRwEDhB+xnglK1k5cad26lL5/ZIaeREgWWy0bs9y9pPA==}
@@ -1018,16 +1011,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.12':
     optional: true
 
-  '@huggingface/jinja@0.4.1': {}
-
   '@huggingface/jinja@0.5.11': {}
-
-  '@huggingface/transformers@3.5.2':
-    dependencies:
-      '@huggingface/jinja': 0.4.1
-      onnxruntime-node: 1.21.0
-      onnxruntime-web: 1.22.0-dev.20250409-89f8206ba4
-      sharp: 0.34.5
 
   '@huggingface/transformers@3.8.1':
     dependencies:
